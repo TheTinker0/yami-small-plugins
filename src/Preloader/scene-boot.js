@@ -1,9 +1,8 @@
 import VideoPlayer from './video-player'
-import Helpers from './helpers'
 
 const preloadGlobalAssets = () => {
     for (let image of ysp.Preloader.GLOBAL.IMAGES) {
-        let path = `img/${Helpers.encodeURIImageName(image)}.png`
+        let path = `img/${encodeURIComponent(image)}.png`
         ImageManager.reserveNormalBitmap(`${path}`, 0, ImageManager._defaultReservationId)
     }
 
